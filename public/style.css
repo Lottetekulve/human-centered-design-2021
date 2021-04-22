@@ -1,13 +1,13 @@
 /*emotion colors*/
 :root {
-  --default: rgba(20, 0, 45, 0.55);
-  --neutral: rgba(20, 0, 45, 0.55);
-  --happy: rgba(251, 215, 49, 0.55);
-  --sad: rgba(100, 149, 237, 0.55);
-  --angry: rgba(255, 69, 0, 0.55);
-  --fearful: rgba(148, 0, 211, 0.55);
-  --discusted: rgba(127, 255, 0, 0.55);
-  --surprised: rgba(255, 107, 19, 0.55);
+  --default: rgba(32, 32, 32, 0.7);
+  --neutral: rgba(32, 32, 32, 0.7);
+  --happy: rgba(28, 196, 37, 0.7);
+  --sad: rgba(75, 133, 240, 0.7);
+  --angry: rgba(185, 49, 0, 0.7);
+  --fearful: rgba(121, 20, 165, 0.7);
+  --disgusted: rgba(90, 60, 32, 0.7);
+  --surprised: rgba(255, 179, 0, 0.7);
 }
 
 body {
@@ -21,17 +21,13 @@ body {
 }
 
 main {
-  margin: 0; padding: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  padding: 100px;
+  display: grid;
+  max-width: 1000px;
 }
 
-section {
-  width: 40rem;
-  height: 40rem;
+section{
   background: rgba(255,255,255,0.4);
   backdrop-filter: blur(1rem);
   border-radius: 2rem;
@@ -42,28 +38,37 @@ section {
   align-items: center;
 }
 
-section h2 {
+section:nth-child(1) {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  padding: 20px;
+  width: 400px;
+  height: 764px;
+}
+
+h2 {
   margin: 0;
-  padding-top: 1rem;
   font-weight: lighter;
   text-transform: uppercase;
   font-size: 2rem;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 section ul {
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
   margin: 0.5em;
   padding: .2em;
   list-style-type: none;
   flex-grow: 2;
-  width: 35em;
+  width: 400px;
   height: 20em;
   overflow: auto;
 }
 
 section ul > li {
   --background: var(--happy);
-  padding: 1rem;
+  padding: 10px;
   margin: 1em 0;
   font-size: 1.25rem;
   background-color: var(--background);
@@ -72,13 +77,14 @@ section ul > li {
   width: 80%;
   display:inline-block;
   position: relative;
+  font-size: 16px;
 }
 
 section ul > li:after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 20px;
+  left: 17px;
   border-top: 20px solid;
   border-top-color: inherit;
   border-left: 20px solid transparent;
@@ -120,14 +126,93 @@ section form > button {
   height: 4em;
 }
 
-div {
-  width: 16rem;
-  height: 9rem;
+section:nth-child(2){
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: grid;
+  margin: 0 20px 20px;
+  padding: 20px;
+  width: 400px;
+  height: 350px;
+}
+
+section div{
+  color: white;
+  font-weight: bolder;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.4);
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  margin: auto;
   display: grid;
   place-items: center;
 }
 
-div >* {
+section h2{
+  text-align: center;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+section div:nth-child(1){
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+section div:nth-child(2){
+  background-color: var(--neutral);
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+section div:nth-child(3){
+  background-color: var(--happy);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+section div:nth-child(4){
+  background-color: var(--sad);
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+section div:nth-child(5){
+  background-color: var(--angry);
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+section div:nth-child(6){
+  background-color: var(--fearful);
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+section div:nth-child(7){
+  background-color: var(--disgusted);
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+section div:nth-child(8){
+  background-color: var(--surprised);
+  grid-column: 1/2;
+  grid-row: 5/6;
+}
+
+section:nth-child(3) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 400px;
+  height: 350px;
+  display: grid;
+  place-items: center;
+  margin: 0 20px 20px;
+  padding: 20px;
+}
+
+section:nth-child(3) >* {
   width: 100%;
   height: 100%;
   grid-row: 1;
