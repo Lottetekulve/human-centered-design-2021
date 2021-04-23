@@ -17,7 +17,7 @@ body {
   overflow: hidden;
   min-height: 100vh;
   min-width: 100vw;
-  background: rgba(1, 29, 255, 0.5);
+  background: rgba(1, 255, 221, 0.5);
 }
 
 main {
@@ -80,7 +80,7 @@ section ul > li {
   font-size: 16px;
 }
 
-section ul > li:after {
+/* section ul > li:after {
   content: "";
   position: absolute;
   top: 100%;
@@ -89,7 +89,7 @@ section ul > li:after {
   border-top-color: inherit;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-}
+} */
 
 section form {
   margin: 0 0 1em 0;
