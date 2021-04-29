@@ -1,152 +1,180 @@
-# Human Centered Design @cmda-minor-web 2021
-//Interactie ontwerpen: Rapid prototypen en testen met echte mensen
+# Human Centered Design @cmda-minor-web · 2020/21
+
+# Like link:
+https://emotions-chat.herokuapp.com/
+
+## Table of Contents
+- Beschrijving 
+- Drie Concepten
+- Gekozen Concept
+- Moscow
+- Real time Events
+- API
+  - Welke API heb ik gebruikt
+  - API Inhoud
+  - Hoe gebruikt
+  - API key
+- Used Packages
+- Install project
+
+
+### Beschrijving
+Dit vak draait om human centered design. Iedereen ontwerpt voor een user. Ik ontwerp voor Eric. 
+Eric is 48 jaar en woont in Amsterdam. Hij heeft Interaction Design aan de HKU gestudeerd. Eric zelf zit in een elektrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. Voor Eric ga ik een chat ontwerpen waarbij bodylanguage wordt overgebracht, omdat emoji's niet genoeg spreken of verkeerd geinterpreteerd worden.
+
+
+### Drie Concepten
+#### Concept 1: Emotie en Kleur
+Voor het eerste concept heb ik bedacht om met de emotie detectie API emoties af te lezen van de gebruiker en per emotie een kleur in te stellen. Wanneer je dan een bericht stuurt krijgt het bericht de kleur van de emotie die jij op dat moment voelt en uit. 
+![](./public/images/concept1.png)
+
+##### Hoe te bouwen:
+- Begin met HTML, CSS en JS opzetten
+- API call
+- Render homepage
+- Maak chat functie
+- Stel kleuren per emoties in
+
+
+#### Concept 2: Snapshots
+Voor dit concept leek het mij een goed idee om een foto van jezelf te sturen naar de persoon waarmee je chat. Zodat deze persoon direct kon zien hoe een bericht bedoelt wordt.
+
+![](./public/images/concept2.png)
+
+
+##### Hoe te bouwen:
+- Begin met HTML, CSS en JS opzetten
+- API call
+- Render homepage
+- Maak chat functie
+- Maak snapshot en stuur naar gebruiker
+
+#### Concept 3: Snapshot en kleur per emotie
+Voor dit concept wil ik de vorige twee concepten combineren. Dus je leest de emotie af met de API en hierdoor veranderd de kleur van je bericht per emotie. En voor een extra beeld ook een image die het nog duidelijker maakt wat de emoties is die je wilt overbrengen.
+
+![](./public/images/concept3.png)
+
+##### Hoe te bouwen:
+- Begin met HTML, CSS en JS opzetten
+- API call
+- Render homepage
+- Maak chat functie
+- Stel kleuren per emoties in
+- Maak snapshot en stuur naar gebruiker
+
+### Gekozen concept
+<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+![](./public/images/)
+....
+#### Features:
+- chat
+- Emotie detectie
+- Aan of uit buttons
+- kleur per emotie
+- snapshot
+
+
+### Moscow
+#### Must have:
+- [x] Chat
+- [x] Api connectie
+- [x] Met socket.io chat beheren
+- [x] snapshot sturen
+- [x] Kleur per emotie
+
+#### Should have:
+- [x] aan en uit buttons kleur
+- [x] optie voor snapshot wel of niet
+
+#### Could have:
+- [ ] keuze uit vaste emotie hoofden van jezelf of snapshot op het moment
+
+#### Would have:
+- [ ] Meer doen aan uiterlijk website
+
+### API
+#### Welke API:
+Face-api.min.js in de public file.
+
+
+#### Hoe gebruikt:
+- loadFacialRecognition function: 
+```
+async function loadFacialRecognition() {
+  await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri('./models'), faceapi.nets.faceLandmark68Net.loadFromUri('./models'), faceapi.nets.faceRecognitionNet.loadFromUri('./models'), faceapi.nets.faceExpressionNet.loadFromUri('./models')])
+```
+- detectEmotion function:
+```
+setInterval(async () => {
+    const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions()
+    const resizedDetections = faceapi.resizeResults(detections, displaySize)
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+    faceapi.draw.drawDetections(canvas, resizedDetections)
+    faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+```
+
+
+
+#### Real-Time Events
+- Connection: <br>
+Wanneer de webpagina wordt geopent, wordt er een connectie gemaakt met socket.io. Dit event roept alle andere real time events aan, message en disconnect.
+```
+io.on('connection', async socket => {
+```
+- Message:<br>
+Het message event zorgt er voor dat de alle berichten en usernames, naar alle servers worden gestuud.
+```
+socket.on('message', (message) => {
+    io.emit('message', message)
+  })
+```
+
+```
+socket.on('message', function(message) {
+  const element = document.createElement('li')
+  element.textContent = message.value
+  element.style.setProperty('--background', `var(--${message.emotion})`)
+  messages.appendChild(element)
+  messages.scrollTop = messages.scrollHeight
+})
+````
+
+- Disconnect:
+Wanneer iemand het spel verlaat wordt er een bericht getoont dat een speler het spel verlaten heeft.
+```
+socket.on('disconnect', () => {
+    console.log('user disconnected')
+  })
+```
+
+
+### Used Packages
+- express
+- socket.io
+- dotenv
+- handlebars
+- nodemon
+
+Install:
+1. npm install
+2. npm install express, socket.io, dotenv, handlebars
+3. npm install -D nodemon
+4. require: `const ... = require('...')`
+
+
+### Install project
+1. clone repo: 
+``` 
+https://github.com/Lottetekulve/human-centered-design-2021.git
+```
+2. Install used packages: 
+```
+npm install
+```
+3. Start op het web: 
+```
+npm run dev
+```
+4. Te vinden op: http://localhost:5000/
 
-Human Centered Design is een  methode voor het ontwerpen van gebruiksvriendelijke interactieve toepassingen. 
 
-> What distinguishes Human-Centered Design from other problem-solving approaches is its obsessive focus on understanding the perspective of the person who experiences a problem, their needs, and whether the solution that has been designed for them is truly meeting their needs effectively or not. At its most effective, the very people who experience a problem the most are a constant part of the design process and when possible, become part of the design team itself. - [What Is Human-Centered Design?](https://medium.com/dc-design/what-is-human-centered-design-6711c09e2779)
-
-Door regelmatig te testen met je doelgroep kom je tot een beter en passend ontwerp. Een Frontend Designer en Developer heeft verstand van techniek, UX en design. Als je web technieken beheerst kun je je ideeën snel prototypen en testen in een browser. Je kan dan aanpassingen doorvoeren, uitproberen en weer testen ...
-
-In het vak Human Centered Design gaan we dingen ontwerpen voor echte mensen. Is er goede interactie? Kan je 'mens' je product op een prettige manier bedienen? Wat voor principes heb je gebruikt en getest? En is het leuk?
-
-
-## Opdracht
-
-### Ontwerpen met en voor echte mensen
-
-Voor dit vak krijg je een ontwerp-opdracht die je gaat maken voor 1 mens. Een echt mens. Je moet je ontwerp 3 keer testen. Door te testen en te itereren ga je je ontwerp verbeteren. Uiteindelijk heb je een ontwerp dat exclusief gemaakt is voor 1 persoon. Een _exclusive design_ ... Wie is deze persoon dan voor wie je dit gaat maken? Wat vindt deze persoon leuk of juist niet? En hoe bedient deze persoon een computer?
-
-- [Opdracht - Ontwerpen met en voor echte mensen](course/Opdracht.md)
-
-
-### Leerdoelen
-
-- _Leren hoe je (design) principles in een ontwerp kan toepassen._
-- _User needs begrijpen en gebruiken in je ontwerp._
-- _Leren hoe je moet testen en de resultaten gebruiken voor het verbeteren van je ontwerp._
-
-[Rubric](https://docs.google.com/spreadsheets/d/1no32c9YyAP78VMcqfA5i5at2OrxP9ce1d8dVGnii4Vs/)
-
-
-
-## Planning & programma
-
-| Planning  | Woensdag  |  Donderdag | Vrijdag  |
-|---|---|---|---|
-| [Week 1](#week-1)  | Intro, College inclusive design + Testen | Gastcollege + Testen | ~~Feedbackgesprekken~~ |
-| [Week 2](#week-2)  | College over testen + Testen  | Gastcollege + Testen | Feedbackgesprekken  |
-| [Week 3](#week-3)  | College + Testen  |  Gastcollege + Testen | Feedbackgesprekken  |
-| [Week 4](#week-4)  | Presentaties + Beoordelingsgesprekken | Beoordelingsgesprekken | Beoordelingsgesprekken + Weekly Nerd |
-
-
-
-### Week 1
-Deze week krijg je een college over _Exclusive Design Principles_. Deze Principles ga je toepassen in de opdracht. Op woensdag gaan we kennis maken met de echte mensen voor wie we gaan ontwerpen. Je kan dan al een kleine interactieve demo maken om te testen.
-
-#### Woensdag 7 april
-Woensdag is de eerste les van het vak Human Centered Design. Je krijgt een intro college over het vak en Vasilis gaat vertellen over _Exclusive Design_.
-
-Daarna prototypen en testen
-
-- 14:00 Groep Darice
-- 15:00 Groep Eric
-
-#### Donderdag 8 april
-Donderdag begint de les met een gastcollege. Deze les gaan we het artikelen [Exclusive Design van Vasilis van Gemert](https://exclusive-design.vasilis.nl/) bespreken.
-
-Daarna prototypen en testen
-
-- 10:30 Groep Roger 
-- 16:30 Groep Marijn
-
-
-#### Vrijdag 9 april
-Deze dag is voor Real-Time web...
-
-
-### Week 2
-Deze week heb je het tweede gesprek met je mens. Wat ga je testen? Wat wil je weten? 
-
-#### Woensdag 14 april
-Woensdag krijg je een college over testen. Voor deze les moet je het artikel [10 Usability Lessons van Steve Krug](https://www.uxbooth.com/articles/10-usability-lessons-from-steve-krugs-dont-make-me-think/) lezen.
-
-Daarna voor de tweede keer prototypen en testen
-
-- 14:00 Groep Darice 
-- 15:00 Groep Eric
-
-#### Donderdag 15 april
-Donderdag begint de les met een gastcollege van Marie van Driessche. 
-
-Daarna voor de tweede keer prototypen en testen
-
-- 10:30 Groep Roger 
-- 16:00 Groep Marijn
-
-#### Vrijdag 16 april
-Vrijdag zijn er coachgesprekken in teams.
-
-
-
-
-### Week 3
-In week 3 gaan we verder met testen, itereren en reflecteren. Deze week is de laatste sessie met je mens. 
-
-#### Woensdag 21 april
-Woensdag beginnen we met een college. Voor deze les moet je dit artikel lezen: [How User Scenarios Help To Improve Your UX van Sabina Idler](https://usabilla.com/blog/how-user-scenarios-help-to-improve-your-ux/).
-
-Daarna gaan we voord de laatste keer prototypen en testen
-
-- 14:00 Groep Darice 
-- 15:00 Groep Eric
-
-#### Donderdag 22 april
-Donderdag begint de les met een gastcollege van Johan Huijkman.
-
-Daarna gaan we voord de laatste keer prototypen en testen
-
-- 10:30 Groep Roger 
-- 16:00 Groep Marijn
-
-
-#### Vrijdag 23 april
-Vrijdag zijn er coachgesprekken.
-
-
-
-
-### Week 4
-
-Deze week hebben we een gesprek waarin we je vorderingen en bevindingen bespreken. We verwachten dat je op Github je tests en iteraties hebt beschreven. Belangrijk is dat je reflecteert op de leerdoelen van het vak. 
-
-
-#### Woensdag 28 april
-Teampresentaties en beoordelingsgesprekken. 
-
-#### Donderdag 29 april
-Beoordelingsgesprekken
-
-#### Vrijdag 30 april
-Beoordelingsgesprekken + Weekly Nerd
-
-
-
-
-
-<!-- Add a link to your live demo in Github Pages 🌐-->
-
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
-
-<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->

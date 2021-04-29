@@ -5,6 +5,9 @@ const video = document.querySelector('video')
 const canvas = document.querySelector('canvas')
 let emotion = 'neutral'
 
+
+
+/// face api
 window.addEventListener('load', () => {
   loadFacialRecognition()
 })
@@ -17,15 +20,31 @@ document.querySelector('form').addEventListener('submit', (event) => {
   }
 })
 
+
 socket.on('message', function(message) {
   const element = document.createElement('li')
-  element.textContent = message.value
+  const p = document.createElement('p')
+  p.textContent = message.value
   element.style.setProperty('--background', `var(--${message.emotion})`)
+  element.appendChild(p)
   messages.appendChild(element)
   messages.scrollTop = messages.scrollHeight
+
+  
+  function take_snapshot(){
+    Webcam.snap(function(data_uri){
+      const result = document.querySelector('#result')
+      result.innerHTML = 
+      '<img src="'+data_uri+'"/>';
+      element.appendChild(result)
+    })
+  } 
+
+  take_snapshot()
 })
 
 async function loadFacialRecognition() {
+
   await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri('./models'), faceapi.nets.faceLandmark68Net.loadFromUri('./models'), faceapi.nets.faceRecognitionNet.loadFromUri('./models'), faceapi.nets.faceExpressionNet.loadFromUri('./models')])
   /** @type MediaStream */
   let stream
@@ -80,4 +99,13 @@ function detectEmotion() {
     }
     input.style.setProperty('--border', `var(--${emotion})`)
   }, 1000)
+
+  Webcam.set({
+    width:350,
+    height:200,
+    image_format:"jpeg",
+    jpeg_quality:90
+  })
+  
+  Webcam.attach('#camera')
 }

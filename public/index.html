@@ -12,7 +12,9 @@
 <main>
   <section>
     <h2>Chat with friends</h2>
-    <ul></ul>
+    <ul>
+      <li id="result"></li>
+    </ul>
     <form>
       <input type="text" autocomplete="off">
       <button>Send</button>
@@ -30,13 +32,16 @@
   </section>
   <section>
     <h2>Camera</h2>
-    <video width='256' height='144'></video>
+    <article id="camera" ></article>
+    <video width='256' height='144'>
+    </video>
     <canvas></canvas>
   </section>
 </main>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="./face-api.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous"></script>
 <script src="./script.js"></script>
 </body>
 </html>

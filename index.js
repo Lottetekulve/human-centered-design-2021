@@ -2,7 +2,8 @@ import express from 'express'
 import http from 'http'
 import path from 'path'
 import { Server as SocketIO } from 'socket.io'
-require('dotenv').config();
+// require('dotenv').config();
+// import Webcam from 'webcam-easy';
 
 const port = process.env.PORT || 5000
 
