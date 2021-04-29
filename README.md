@@ -4,7 +4,7 @@
 https://emotions-chat.herokuapp.com/
 
 ## Table of Contents
--[Beschrijving](#Beschijving) 
+- [Beschrijving](###Beschijving) 
 - Drie Concepten
 - Gekozen Concept
 - User Scenario
