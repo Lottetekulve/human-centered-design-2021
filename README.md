@@ -9,14 +9,12 @@ https://emotions-chat.herokuapp.com/
 - :pushpin: Gekozen Concept
 - :man_technologist: User Scenario
 - :bookmark: Moscow
-- Exclusive design principles
-- User tests
-- API
-  - Welke API heb ik gebruikt
-  - Hoe gebruikt
-- Real time Events
-- Used Packages
-- Install project
+- :tipping_hand_person: Exclusive design principles
+- :family_man_woman_boy_boy: User tests
+- :monkey: API
+- :hourglass_flowing_sand: Real time Events
+- :package: Used Packages
+- :arrow_down: Install project
 
 
 ### :pencil2: Beschrijving
@@ -105,7 +103,7 @@ Daarnaast wil ik het mogelijk maken om keuze te hebben uit de verschillende feat
 #### Would have:
 - [ ] Meer doen aan uiterlijk website
 
-### Exclusive design principles
+### :tipping_hand_person: Exclusive design principles
 
 - Study situation: <br>
 Eric heeft niet de beschikking over de fijne motoriek. Hij gebruikt een game muis met hoge dpi en mechanisch toetsenbord (weinig toetsen nodig) of draadloos toetsenbord waar niet veel kracht voor nodig is. Gebruikt vaak spraak dictatie om teksten te typen omdat dit sneller is dan typen. Ik heb dit toegepast door er voor te zorgen dat er geen extra buttons ingedrukt hoeven worden. Alleen de button van verstuur message, of zelfs een enter op het toetsenbord zorgt er voor dat alle actie aangeroepen en uitgevoerd worden.
@@ -119,10 +117,10 @@ Eric is zelf ook een designer, hierdoor was zijn feedback heel nuttig. Door zijn
 - Add nonsense: <br>
 Gekke beelden, leuke plaatjes, of zoals het bij mij is toegepast, een snapshot van jezelf van hoe jij je op dat moment voelt gecombineerd met de kleur die sprekend is voor die emotie. Het leuke aan de api is dat je ook een gek gezicht kan trekken en daar een emotie uitgehaald kan worden, en vervolgens deze 'gekke bek' naar de andere gebruikers wordt gestuurd zodat zij ook kunnen lachen. Of juist wanneer je heel erg boos of verdrietig bent, kun je dit heel erg benadrukken door de snapshot en kleur die gecombineerd wordt. Je bericht wordt veel krachtiger door deze mogelijkheden. De twee vrij gelijke functies zijn misschien niet allebei nodig, zoals ik al eerder vermelde, maar het is wel een stuk leuker en krachtiger op deze manier.
 
-### User tests
+### :family_man_woman_boy_boy: User tests
 In de wiki's beschijf ik 3 testen van de afgelopen weken. [wiki](https://github.com/Lottetekulve/human-centered-design-2021/wiki)
 
-### API
+### :monkey: API
 #### Welke API:
 Face-api.min.js in de public file.
 
@@ -144,7 +142,7 @@ setInterval(async () => {
 ```
 
 
-#### Real-Time Events
+### :hourglass_flowing_sand: Real-Time Events
 - Connection: <br>
 Wanneer de webpagina wordt geopent, wordt er een connectie gemaakt met socket.io. Dit event roept alle andere real time events aan, message en disconnect.
 ```
@@ -156,9 +154,6 @@ Het message event zorgt er voor dat de alle berichten en usernames, naar alle se
 socket.on('message', (message) => {
     io.emit('message', message)
   })
-```
-
-```
 socket.on('message', function(message) {
   const element = document.createElement('li')
   element.textContent = message.value
@@ -175,9 +170,10 @@ socket.on('disconnect', () => {
     console.log('user disconnected')
   })
 ```
+```
 
 
-### Used Packages
+### :package: Used Packages
 - express
 - socket.io
 - dotenv
@@ -191,7 +187,7 @@ Install:
 4. require: `const ... = require('...')`
 
 
-### Install project
+### :arrow_down: Install project
 1. clone repo: 
 ``` 
 https://github.com/Lottetekulve/human-centered-design-2021.git
