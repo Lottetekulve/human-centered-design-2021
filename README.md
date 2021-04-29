@@ -4,7 +4,7 @@
 https://emotions-chat.herokuapp.com/
 
 ## Table of Contents
--[Beschrijving](#Beschijving) 
+- Beschrijving
 - Drie Concepten
 - Gekozen Concept
 - User Scenario
@@ -69,9 +69,11 @@ Voor dit concept wil ik de vorige twee concepten combineren. Dus je leest de emo
 - Maak snapshot en stuur naar gebruiker
 
 ### Gekozen concept
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
-![](./public/images/)
-....
+![](./public/images/frontend.png)
+Het concept dat ik gekozen heb ik concept 3.
+Ik ga doormiddel van de Face API emoties aflezen van de gebruikers gezicht. Vervolgens krijgt elke emotie een unieke kleur die de emotie moet voorstellen. Helaas is kleur nog niet sprekend genoeg. Denk aan rood, staat dit voor liefde of juist voor woede. Om er voor te zorgen dat kleur duidelijker wordt, ga ik een legenda maken voor de 7 emoties en hun kleuren. Daarnaast zal de chat een feature hebben om een snapshot mee te sturen naar de andere gebruikers. Deze snapshot wordt genomen wanneer je het bericht verstuurd, net zoals bij de emotie. De emoties worden continu afgelezen van je gezicht maar de emotie die op het moment van sturen wordt afgelezen, wordt gebruikt.
+Daarnaast wil ik het mogelijk maken om keuze te hebben uit de verschillende features. Dit zorgt er voor dat de gebruikers de touwtjes in de handen hebben. Snapshot, kleur of beide, alles kan!
+
 #### Features:
 - chat
 - Emotie detectie
@@ -80,7 +82,10 @@ Voor dit concept wil ik de vorige twee concepten combineren. Dus je leest de emo
 - snapshot
 
 ### User scenario
-what who why how
+- Who: Eric is 48 jaar en woont in Amsterdam. Hij heeft Interaction Design aan de HKU gestudeerd. Eric zelf zit in een elektrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. 
+- What: Eric wilt een chat die de bodylanguage van gebruikers laat zien/merken.
+- Why: Eric praat veel met mensen online maar merkt vaak dat er niet goed begrepen wordt, wat iemand bedoelt met een bericht. Is dit sarcastisch, grappig of stom bedoelt? Ook worden emoji's vaak verkeerd geinterpreteerd en vaak weten mensen niet goed wat een emoji betekent.
+- How: Doormiddel van lichaamstaal kun je veel gemakkelijker zien hoe iemand iets bedoelt. Nu ga ik geen directe lichaamstaal gebruiken maar wel emoties in het gezicht. Ook hier kun je heel veel informatie uit halen, zo zie je veel sneller of iemand iets sarcasitisch of serieus bedoeld. 
 
 ### Moscow
 #### Must have:
@@ -102,19 +107,20 @@ what who why how
 
 ### Exclusive design principles
 Uitleg + toepassing in ontwerp
-- Study situation
-I used this principle because I wonder if we understand the different contexts of people with disabilities well enough?2 My assumption is that we don’t. So in order to become a specialist inclusive designer I studied a few individual situations of people with different disabilities.
+- Study situation:
+Eric heeft niet de beschikking over de fijne motoriek. Hij gebruikt een game muis met hoge dpi en mechanisch toetsenbord (weinig toetsen nodig) of draadloos toetsenbord waar niet veel kracht voor nodig is. Gebruikt vaak spraak dictatie om teksten te typen omdat dit sneller is dan typen. Ik heb dit toegepast door er voor te zorgen dat er geen extra buttons ingedrukt hoeven worden. Alleen de button van verstuur message, of zelfs een enter op het toetsenbord zorgt er voor dat alle actie aangeroepen en uitgevoerd worden.
 
 - Ignore conventions
-The original inclusive principle says that you should use conventions that people know. But I couldn’t help but wonder: Do the current web design conventions work for people with disabilities?3 Simply said, the current conventions are designed by, and thus for, designers. Not all these conventions work for non-designers. If we want to include non-designers, and especially people with disabilities, we should reconsider these conventions if needed, after we studied their situations.
+Door meerdere functionaliteiten toe te voegen aan de app die eigenlijk het zelfde doen. Namelijk de kleur en de snapshot, ze brengen allebei emotie over naar de andere gebruiker. In de huidige design conventies zal dit gezien worden als overbodig en zou daarom weg gelaten moeten worden. "Een functie die emotie overbrengt is genoeg", maar misschien werkt het wel veel beter voor gehandicapten om juist meerdere fucties het zelfde te laten zien, op net een andere manier. Misschien maakt dit het juist nog duidelijker voor de mensen die het al zo lastig hebben om devices en het internet te gebruiken.
 
 - Prioritise identity
-Observing the situation of people with disabilities, and designing things especially for them is of course a good first step. But what if we let people with disabilities play an active role in the design process?4 Next to designing for people I have also designed with people, combining the insights and ideas of excluded people with the skills and knowledge of me as a webdesigner.
+Eric is zelf ook een designer, hierdoor was zijn feedback heel nuttig. Door zijn feedback voelt het alsof we samen op dit concept zijn uitgekomen. Ook zie je door de tests veel beter wat voor Eric goed en niet goed te doen is, en wat hij leuk vind, om moet lachen en eigenlijk helemaal niet ziet zitten. Dit zijn de meest waardevolle insights.
 
 - Add nonsense
-One of my main concerns is how can we lift accessible web design beyond the functional?5 I have tried to answer this question by allowing the people I worked with, and myself, to add nonsense, in order to try and come up with ideas that live on a higher conceptual level than the obvious. This has resulted in some interesting — and fun — new ideas and projects.
+Gekke beelden, leuke plaatjes, of zoals het bij mij is toegepast, een snapshot van jezelf van hoe jij je op dat moment voelt gecombineerd met de kleur die sprekend is voor die emotie. Het leuke aan de api is dat je ook een gek gezicht kan trekken en daar een emotie uitgehaald kan worden, en vervolgens deze 'gekke bek' naar de andere gebruikers wordt gestuurd zodat zij ook kunnen lachen. Of juist wanneer je heel erg boos of verdrietig bent, kun je dit heel erg benadrukken door de snapshot en kleur die gecombineerd wordt. Je bericht wordt veel krachtiger door deze mogelijkheden. De twee vrij gelijke functies zijn misschien niet allebei nodig, zoals ik al eerder vermelde, maar het is wel een stuk leuker en krachtiger op deze manier.
 
 ### User tests
+In de wiki's beschijf ik 3 testen van de afgelopen weken.
 
 ### API
 #### Welke API:
@@ -136,7 +142,6 @@ setInterval(async () => {
     faceapi.draw.drawDetections(canvas, resizedDetections)
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
 ```
-
 
 
 #### Real-Time Events
