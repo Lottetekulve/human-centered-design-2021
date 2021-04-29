@@ -170,7 +170,6 @@ socket.on('disconnect', () => {
     console.log('user disconnected')
   })
 ```
-```
 
 
 ### :package: Used Packages
