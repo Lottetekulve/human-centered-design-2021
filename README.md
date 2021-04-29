@@ -1,6 +1,6 @@
 # Human Centered Design @cmda-minor-web · 2020/21
 
-# Like link:
+# Live link:
 https://emotions-chat.herokuapp.com/
 
 ## Table of Contents
@@ -80,10 +80,13 @@ Daarnaast wil ik het mogelijk maken om keuze te hebben uit de verschillende feat
 - snapshot
 
 ### :man_technologist: User scenario
-- Who: Eric is 48 jaar en woont in Amsterdam. Hij heeft Interaction Design aan de HKU gestudeerd. Eric zelf zit in een elektrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. 
-- What: Eric wilt een chat die de bodylanguage van gebruikers laat zien/merken.
-- Why: Eric praat veel met mensen online maar merkt vaak dat er niet goed begrepen wordt, wat iemand bedoelt met een bericht. Is dit sarcastisch, grappig of stom bedoelt? Ook worden emoji's vaak verkeerd geinterpreteerd en vaak weten mensen niet goed wat een emoji betekent.
-- How: Doormiddel van lichaamstaal kun je veel gemakkelijker zien hoe iemand iets bedoelt. Nu ga ik geen directe lichaamstaal gebruiken maar wel emoties in het gezicht. Ook hier kun je heel veel informatie uit halen, zo zie je veel sneller of iemand iets sarcasitisch of serieus bedoeld. 
+Eric is 48 jaar en woont in Amsterdam. Hij heeft Interaction Design aan de HKU gestudeerd. Eric zelf zit in een elektrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. Eric wilt een chat die de bodylanguage van gebruikers laat zien/merken.
+Eric praat veel met mensen online maar merkt vaak dat er niet goed begrepen wordt, wat iemand bedoelt met een bericht. Is dit sarcastisch, grappig of stom bedoeld? Ook worden emoji's vaak verkeerd geinterpreteerd en weten mensen niet goed wat een emoji betekent. Doormiddel van lichaamstaal kun je veel gemakkelijker zien hoe iemand iets bedoelt. Nu ga ik geen directe lichaamstaal gebruiken maar wel emoties in het gezicht. Ook hier kun je heel veel informatie uit halen, zo zie je veel sneller of iemand iets sarcasitisch of serieus bedoeld. 
+
+Zo zal het voor Eric gaan: <br>
+Eric opent de emotions chat. De pagina zal vragen of de camera toegang mag. Wanneer Eric toegang geeft aan de camera verschijnt zijn hoofd rechts onderin de pagina. Eric ziet dan het beeld van zijn webcam. Eric kan nu gaan chatten met andere. Er moet alleen wel nog iemand anders de website openen om mee te kunnen chatten. Eric nodigt een vriend uit en beginnen te praten. Eric typt een bericht in en klikt op send. Op het moment van versturen wordt er door de face API een emotie gedetecteerd. Deze emotie heeft een typerende kleur. Het bericht dat Eric heeft verzonden krijgt de kleur van zijn emotie. Ook zie je dat er een foto's is gestuurd naar de ander gebruiker. Deze foto is tegelijk genomen met het verzenden van het bericht. Eric krijgt direct een bericht terug van zijn vriend, waarbij ook de emotie in kleur is weergeven er een snapshot is meegestuurd. Eric ziet direct aan zijn vriend dat het bericht grappig bedoeld is. Zijn vriend heeft een grote lach op zijn gezicht in de snapshot en de kleur van het bericht is groen. Groen staat namelijk voor vreugde. De snapshot verdwijnt wanneer een nieuw bericht gestuurd wordt. De nieuwe snapshot verschijnt weer naast het nieuwe bericht. 
+
+
 
 ### :bookmark: Moscow
 #### Must have:
