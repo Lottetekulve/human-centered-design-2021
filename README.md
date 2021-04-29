@@ -121,7 +121,8 @@ Eric is zelf ook een designer, hierdoor was zijn feedback heel nuttig. Door zijn
 Gekke beelden, leuke plaatjes, of zoals het bij mij is toegepast, een snapshot van jezelf van hoe jij je op dat moment voelt gecombineerd met de kleur die sprekend is voor die emotie. Het leuke aan de api is dat je ook een gek gezicht kan trekken en daar een emotie uitgehaald kan worden, en vervolgens deze 'gekke bek' naar de andere gebruikers wordt gestuurd zodat zij ook kunnen lachen. Of juist wanneer je heel erg boos of verdrietig bent, kun je dit heel erg benadrukken door de snapshot en kleur die gecombineerd wordt. Je bericht wordt veel krachtiger door deze mogelijkheden. De twee vrij gelijke functies zijn misschien niet allebei nodig, zoals ik al eerder vermelde, maar het is wel een stuk leuker en krachtiger op deze manier.
 
 ### :family_man_woman_boy_boy: User tests
-In de wiki's beschijf ik 3 testen van de afgelopen weken. [wiki](https://github.com/Lottetekulve/human-centered-design-2021/wiki)
+In de wiki's beschijf ik 3 testen van de afgelopen weken. Hier zie je ook wat ik elke week heb veranderd/toegepast aan mijn concept en ontwerp.
+[wiki](https://github.com/Lottetekulve/human-centered-design-2021/wiki)
 
 ### :monkey: API
 #### Welke API:
