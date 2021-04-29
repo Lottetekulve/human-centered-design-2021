@@ -4,23 +4,29 @@
 https://emotions-chat.herokuapp.com/
 
 ## Table of Contents
-- Beschrijving 
+- [Beschrijving] (#Beschijving) 
 - Drie Concepten
 - Gekozen Concept
+- User Scenario
 - Moscow
-- Real time Events
+- Exclusive design principles
+- User tests
 - API
   - Welke API heb ik gebruikt
-  - API Inhoud
   - Hoe gebruikt
-  - API key
+- Real time Events
 - Used Packages
 - Install project
 
 
 ### Beschrijving
+#### Opdracht:
 Dit vak draait om human centered design. Iedereen ontwerpt voor een user. Ik ontwerp voor Eric. 
-Eric is 48 jaar en woont in Amsterdam. Hij heeft Interaction Design aan de HKU gestudeerd. Eric zelf zit in een elektrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. Voor Eric ga ik een chat ontwerpen waarbij bodylanguage wordt overgebracht, omdat emoji's niet genoeg spreken of verkeerd geinterpreteerd worden.
+Eric is 48 jaar en woont in Amsterdam. Hij heeft Interaction Design aan de HKU gestudeerd. Eric zelf zit in een elektrische rolstoel. Hij heeft niet de beschikking over de fijne motoriek. 
+#### Probleem:
+Voor Eric ga ik een chat ontwerpen waarbij bodylanguage wordt overgebracht, omdat emoji's niet genoeg spreken of verkeerd geinterpreteerd worden. Hij wil kunnen zien wat mensen bedoelen met berichtjes die hij binnen krijgt en zelf ook meer betekenis geven aan zijn berichten aan anderen.
+#### Oplossing:
+Zie gekozen concept
 
 
 ### Drie Concepten
@@ -73,6 +79,8 @@ Voor dit concept wil ik de vorige twee concepten combineren. Dus je leest de emo
 - kleur per emotie
 - snapshot
 
+### User scenario
+what who why how
 
 ### Moscow
 #### Must have:
@@ -91,6 +99,22 @@ Voor dit concept wil ik de vorige twee concepten combineren. Dus je leest de emo
 
 #### Would have:
 - [ ] Meer doen aan uiterlijk website
+
+### Exclusive design principles
+Uitleg + toepassing in ontwerp
+- Study situation
+I used this principle because I wonder if we understand the different contexts of people with disabilities well enough?2 My assumption is that we don’t. So in order to become a specialist inclusive designer I studied a few individual situations of people with different disabilities.
+
+- Ignore conventions
+The original inclusive principle says that you should use conventions that people know. But I couldn’t help but wonder: Do the current web design conventions work for people with disabilities?3 Simply said, the current conventions are designed by, and thus for, designers. Not all these conventions work for non-designers. If we want to include non-designers, and especially people with disabilities, we should reconsider these conventions if needed, after we studied their situations.
+
+- Prioritise identity
+Observing the situation of people with disabilities, and designing things especially for them is of course a good first step. But what if we let people with disabilities play an active role in the design process?4 Next to designing for people I have also designed with people, combining the insights and ideas of excluded people with the skills and knowledge of me as a webdesigner.
+
+- Add nonsense
+One of my main concerns is how can we lift accessible web design beyond the functional?5 I have tried to answer this question by allowing the people I worked with, and myself, to add nonsense, in order to try and come up with ideas that live on a higher conceptual level than the obvious. This has resulted in some interesting — and fun — new ideas and projects.
+
+### User tests
 
 ### API
 #### Welke API:
